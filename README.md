@@ -212,10 +212,33 @@ Follow the instructions in the comments to provide a proper definition of `xs`,
 then rerun the command above to generate a markdown table of runtimes.
 Copy/paste the table into the README file below this line.
 
-<!-- add the table here -->
-
+|len(xs)|timsort|merge_sorted|quick_sorted|
+|-------|-------|------------|------------|
+|2**0|3.90e-06|3.36e-06|2.79e-06|
+|2**1|2.59e-06|9.38e-06|1.17e-05|
+|2**2|2.47e-06|1.68e-05|1.70e-05|
+|2**3|3.09e-06|3.50e-05|3.57e-05|
+|2**4|4.50e-06|7.49e-05|7.83e-05|
+|2**5|7.84e-06|1.61e-04|1.77e-04|
+|2**6|1.52e-05|3.64e-04|4.40e-04|
+|2**7|2.86e-05|7.65e-04|1.01e-03|
+|2**8|5.93e-05|1.83e-03|2.43e-03|
+|2**9|1.40e-04|4.12e-03|5.21e-03|
+|2**10|2.95e-04|8.09e-03|1.14e-02|
+|2**11|6.49e-04|1.98e-02|2.53e-02|
+|2**12|1.50e-03|4.10e-02|4.76e-02|
+|2**13|2.64e-03|8.46e-02|1.23e-01|
+|2**14|7.02e-03|1.98e-01|2.51e-01|
+|2**15|1.56e-02|4.17e-01|5.14e-01|
+|2**16|3.56e-02|9.05e-01|1.14e+00|
+|2**17|7.96e-02|1.90e+00|2.38e+00|
+|2**18|1.79e-01|4.03e+00|5.30e+00|
+|2**19|4.22e-01|8.68e+00|1.13e+01|
+|2**20|9.46e-01|1.82e+01|2.40e+01|
+|2**21|2.12e+00|3.87e+01|5.27e+01|
+|2**22|4.72e+00|8.07e+01|1.22e+02|
 You should notice that the built-in `sorted` function ran much faster on this input,
-but your `merge_sorted` and `quick_sorted` functions have essentially the same runtimes.
+but your `merge_sorted` and `quick_sorted` functions have essentially the same runtime
 This is because TimSort is designed to not have to resort already sorted data,
 and its best-case runtime is therefore $\Theta(n)$ instead of $\Theta(n\log n)$.
 It turns out that in practice, data is often partially sorted,
